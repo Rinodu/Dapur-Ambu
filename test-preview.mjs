@@ -32,3 +32,6 @@ assert.equal(opened, false);
 handlers.click();
 handlers.backdrop({ target: preview });
 assert.equal(opened, false);
+handlers.click();
+handlers.backdrop({ target: previewImage });
+assert.equal(opened, false);

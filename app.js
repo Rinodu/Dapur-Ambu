@@ -90,7 +90,7 @@
   }));
   preview.querySelector('.preview-close').addEventListener('click', () => preview.close());
   preview.addEventListener('click', event => {
-    if (event.target === preview) preview.close();
+    if (event.target === preview || event.target === previewImage) preview.close();
   });
 
 })();
