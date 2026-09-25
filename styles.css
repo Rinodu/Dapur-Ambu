@@ -9,6 +9,7 @@
 @media(max-width:700px){.brand small{font-size:12px;letter-spacing:.1px}.brand>span{font-size:27px}.eyebrow{font-size:12px;letter-spacing:.5px;gap:7px}.hero-description{font-size:16px}.button-small,.button-primary{font-size:14px}.button-small{gap:10px;padding:11px 14px}.hero-note,.location,footer,.replay{font-size:12px}.cake-three{bottom:0}.hero{min-height:820px}.intro-small,.intro-note{font-size:12px}}
 @media(max-width:360px){.site-header{padding:0 12px}.brand>span{font-size:24px}.brand small{display:none}.button-small{font-size:12px;padding:10px 12px}.eyebrow{font-size:12px;letter-spacing:0;gap:4px}.eyebrow span{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.intro{display:none}.intro-running .hero-copy,.intro-running .cake-scene{opacity:1;transform:none}.cake-float{transform:rotate(var(--r))}.ribbon-track{transform:none}.motion-control,.replay{display:none}}
+.cake{pointer-events:auto;touch-action:none;cursor:grab;transition:transform .75s cubic-bezier(.22,1.5,.4,1)}.cake.dragging{cursor:grabbing;transition:none;z-index:4}.cake.dragging .cake-float{animation-play-state:paused}
 
 .header-link{font-size:13px;font-weight:700;white-space:nowrap}
 .header-link:hover,.text-link:hover,footer a:hover{text-decoration:underline;text-underline-offset:5px}
