@@ -88,7 +88,6 @@
     previewImage.alt = image.alt;
     preview.showModal();
   }));
-  preview.querySelector('.preview-close').addEventListener('click', () => preview.close());
-  previewImage.addEventListener('click', () => preview.close());
+  preview.addEventListener('click', () => preview.close());
 
 })();
