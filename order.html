@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5bdd2">
+  <meta name="description" content="Pesan kue Dapur Ambu dan kirim detailnya melalui WhatsApp.">
+  <title>Pesan Kue — Dapur Ambu</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23f5bdd2'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Georgia' font-size='46' font-weight='bold' fill='%2359243a'%3Ea%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=3">
+  <script src="order.js" defer></script>
+</head>
+<body class="order-body">
+  <a class="skip-link" href="#utama">Lewati ke konten</a>
+  <div class="site-frame">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Dapur Ambu, beranda"><span>Dapur <i>Ambu</i><span class="brand-star" aria-hidden="true">✳</span></span><small>HOMEMADE CAKES · LEGOK</small></a>
+      <nav aria-label="Navigasi utama"><a class="header-link" href="./#kreasi">Lihat kreasi</a><a class="button button-small" href="./">Kembali <span aria-hidden="true">↗</span></a></nav>
+    </header>
+    <main id="utama" class="order-page">
+      <div class="order-page-intro">
+        <a class="order-back" href="./#kreasi">← Kembali ke kreasi</a>
+        <p class="section-kicker">DARI DAPUR AMBU, DENGAN CINTA ✳</p>
+        <h1>BUAT MOMENMU <em>LEBIH MANIS.</em></h1>
+        <p>Ceritakan kue yang kamu mau. Setelah mengisi form, ringkasannya akan terbuka di WhatsApp untuk kamu kirim ke admin.</p>
+        <div class="order-page-note"><span aria-hidden="true">♡</span><p>Punya desain sendiri? Tulis temanya di sini, lalu kirim foto referensi saat mengobrol di WhatsApp.</p></div>
+      </div>
+      <form class="order-form order-page-form" id="order-form">
+        <div class="order-form-top"><span>FORMULIR PEMESANAN</span><b>01 — 03</b></div>
+        <div class="form-section"><div class="form-section-title"><span>01</span><div><h2>Tentang kamu</h2><p>Agar admin bisa menghubungimu.</p></div></div>
+          <div class="field-row"><label>Nama pelanggan *<input name="name" autocomplete="name" required placeholder="Nama kamu"></label><label>Nomor WhatsApp *<input name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="[0-9+() -]{9,20}" placeholder="08xxxxxxxxxx"></label></div>
+        </div>
+        <div class="form-section"><div class="form-section-title"><span>02</span><div><h2>Kue &amp; jadwal</h2><p>Pilih produk dan waktu pengambilan.</p></div></div>
+          <div class="field-row"><label>Produk *<select name="product" required><option value="">Pilih kue</option><option>Brownies Medium</option><option>Brownies Besar</option><option>Cake Bento</option><option>Cake Sedang</option><option>Cake Besar</option><option>Custom Cake</option></select></label><label>Jumlah *<input name="quantity" type="number" min="1" value="1" required></label></div>
+          <div class="field-row"><label>Tanggal pengambilan *<input name="date" type="date" required></label><label>Jam pengambilan *<input name="time" type="time" required></label></div>
+        </div>
+        <div class="form-section"><div class="form-section-title"><span>03</span><div><h2>Sentuhan personal</h2><p>Detail kecil yang membuat kue terasa spesial.</p></div></div>
+          <label>Ukuran, varian, atau tema<input name="variant" placeholder="Contoh: warna pink, tema bunga"></label>
+          <label>Catatan desain<textarea name="notes" rows="3" placeholder="Tulisan di kue, warna, topping, atau detail lain"></textarea></label>
+        </div>
+        <label class="form-check"><input type="checkbox" name="pickup" required><span>Saya memahami pesanan diambil di tempat dan baru berlaku setelah dikonfirmasi admin.</span></label>
+        <button class="button button-primary form-submit" type="submit">Lanjut via WhatsApp <span class="button-arrow" aria-hidden="true">↗</span></button>
+        <p class="form-note">Pesan baru terkirim setelah kamu menekan Kirim di WhatsApp. <a href="https://script.google.com/macros/s/AKfycbx9nABZm0PaAyODYUvYhPvzyLWP4xoc4-aOrDF-X9s6tOltLjvDFSb5P3Nx9OSscry7/exec" target="_blank" rel="noopener noreferrer">Gunakan formulir lama</a>.</p>
+      </form>
+    </main>
+    <footer><span>Little cakes. Lovely memories.</span><a href="./">Dapur Ambu ♡ Legok</a></footer>
+  </div>
+</body>
+</html>
