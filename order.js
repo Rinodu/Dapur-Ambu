@@ -10,17 +10,20 @@
     const lines = [
       'Halo Dapur Ambu, saya ingin konsultasi pesanan kue.',
       '',
+      '*Data pemesan*',
       `Nama: ${data.name.trim()}`,
       `Nomor WhatsApp: ${data.phone.trim()}`,
+      '',
+      '*Detail pesanan*',
       `Produk: ${data.product}`,
       `Jumlah: ${data.quantity}`,
       `Tanggal pengambilan: ${day}/${month}/${year}`,
       `Jam pengambilan: ${data.time}`,
-      data.variant?.trim() ? `Ukuran/varian/tema: ${data.variant.trim()}` : '',
-      data.notes?.trim() ? `Catatan desain: ${data.notes.trim()}` : '',
+      data.variant?.trim() ? `Ukuran/varian/tema: ${data.variant.trim()}` : null,
+      data.notes?.trim() ? `Catatan desain: ${data.notes.trim()}` : null,
       '',
       'Mohon informasi ketersediaan dan harga akhirnya. Terima kasih!'
-    ].filter(Boolean);
+    ].filter(line => line !== null);
     window.location.href = `https://wa.me/6281210028857?text=${encodeURIComponent(lines.join('\n'))}`;
   });
 })();
