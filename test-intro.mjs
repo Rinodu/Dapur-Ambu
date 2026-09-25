@@ -7,7 +7,7 @@ const script = readFileSync(new URL('./app.js', import.meta.url), 'utf8');
 function loadPage(search, hash = '') {
   let introPlayed = false;
   let replacedUrl;
-  const element = { addEventListener() {} };
+  const element = { addEventListener() {}, querySelector() { return element; } };
   const document = {
     body: { offsetWidth: 0, classList: { remove() {}, add(name) { if (name === 'intro-running') introPlayed = true; } } },
     querySelector() { return element; },

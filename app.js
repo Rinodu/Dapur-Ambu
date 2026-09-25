@@ -80,4 +80,17 @@
     }));
   }
 
+  const preview = document.querySelector('.product-preview');
+  const previewImage = preview.querySelector('img');
+  document.querySelectorAll('.product-zoom').forEach(button => button.addEventListener('click', () => {
+    const image = button.querySelector('img');
+    previewImage.src = image.src;
+    previewImage.alt = image.alt;
+    preview.showModal();
+  }));
+  preview.querySelector('.preview-close').addEventListener('click', () => preview.close());
+  preview.addEventListener('click', event => {
+    if (event.target === preview) preview.close();
+  });
+
 })();

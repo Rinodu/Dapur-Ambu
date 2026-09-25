@@ -22,8 +22,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=8">
-  <script src="app.js?v=5" defer></script>
+  <link rel="stylesheet" href="styles.css?v=9">
+  <script src="app.js?v=6" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#utama">Lewati ke konten</a>
@@ -55,9 +55,9 @@
         <span class="spark spark-one" aria-hidden="true">✳</span><span class="spark spark-two" aria-hidden="true">✧</span><span class="spark spark-three" aria-hidden="true">✧</span>
 
         <div class="cake-scene" aria-label="Kreasi kue Dapur Ambu">
-          <figure class="cake cake-one"><div class="cake-float"><img src="assets/cake-1.webp" alt="Kue ulang tahun Shaka dengan dekorasi beruang dan bintang" width="1151" height="1367" fetchpriority="high"></div><figcaption>made with love <span aria-hidden="true">♡</span></figcaption></figure>
-          <figure class="cake cake-two"><div class="cake-float"><img src="assets/cake-2.webp" alt="Kue ulang tahun hijau dengan dekorasi kereta" width="1207" height="1303" fetchpriority="high"></div></figure>
-          <figure class="cake cake-three"><div class="cake-float"><img src="assets/cake-3.webp" alt="Kue cokelat dengan tulisan HBD PAPA" width="1306" height="1204"></div><figcaption>your little sweet moment</figcaption></figure>
+          <figure class="cake cake-one"><div class="cake-float"><img src="assets/cake-1.webp" srcset="assets/cake-1-480.webp 480w, assets/cake-1-800.webp 800w, assets/cake-1.webp 1151w" sizes="(max-width:700px) 38vw, 25vw" alt="Kue ulang tahun Shaka dengan dekorasi beruang dan bintang" width="1151" height="1367" fetchpriority="high"></div><figcaption>made with love <span aria-hidden="true">♡</span></figcaption></figure>
+          <figure class="cake cake-two"><div class="cake-float"><img src="assets/cake-2.webp" srcset="assets/cake-2-480.webp 480w, assets/cake-2-800.webp 800w, assets/cake-2.webp 1207w" sizes="(max-width:700px) 34vw, 23vw" alt="Kue ulang tahun hijau dengan dekorasi kereta" width="1207" height="1303" fetchpriority="high"></div></figure>
+          <figure class="cake cake-three"><div class="cake-float"><img src="assets/cake-3.webp" srcset="assets/cake-3-480.webp 480w, assets/cake-3-800.webp 800w, assets/cake-3.webp 1306w" sizes="(max-width:700px) 40vw, 25vw" alt="Kue cokelat dengan tulisan HBD PAPA" width="1306" height="1204"></div><figcaption>your little sweet moment</figcaption></figure>
         </div>
 
         <div class="hero-copy">
@@ -65,6 +65,7 @@
           <h1 id="hero-title"><span class="title-line">MANISNYA</span><span class="title-line title-middle">MOMEN</span><span class="title-line">ISTIMEWA<span class="title-period">.</span></span></h1>
           <p class="hero-description">Setiap momen punya cerita.<br>Kita buat sedikit lebih manis, dengan kue istimewa.</p>
           <a class="button button-primary" href="https://www.instagram.com/dapurambu86/" target="_blank" rel="noopener noreferrer">Lihat kreasi kami <span class="button-arrow" aria-hidden="true">↗</span></a>
+          <a class="button hero-menu-link" href="#kreasi">Lihat menu &amp; harga <span aria-hidden="true">↓</span></a>
           <span class="hero-note">Homemade. Personal. Penuh cinta.</span>
         </div>
 
@@ -80,12 +81,12 @@
       <section class="catalog-section content-section" id="kreasi" aria-labelledby="catalog-title">
         <div class="section-heading"><div><p class="section-kicker">DARI DAPUR KAMI</p><h2 id="catalog-title">Kreasi &amp; <i>menu</i></h2></div><p>Pilih yang kamu suka. Untuk desain khusus, harga mengikuti ukuran dan tingkat kesulitan.</p></div>
         <div class="product-grid">
-          <article class="product-card"><div class="product-photo"><img src="assets/brownies-medium.jpeg" alt="Brownies cokelat custom dengan buah dan dekorasi ulang tahun" loading="lazy"><span>01 / BROWNIES</span></div><div class="product-info"><h3>Brownies Medium</h3><p>Brownies cokelat dengan topping variatif, cocok untuk camilan atau hadiah sederhana.</p><div class="product-bottom"><strong>Rp 45.000</strong><a href="order.html?product=Brownies%20Medium">Pilih kue <span aria-hidden="true">↗</span></a></div></div></article>
-          <article class="product-card"><div class="product-photo"><img src="assets/brownies-besar.jpeg" alt="Brownies besar Dapur Ambu" loading="lazy"><span>02 / BROWNIES</span></div><div class="product-info"><h3>Brownies Besar</h3><p>Brownies cokelat ukuran besar untuk keluarga, acara kecil, atau berbagi.</p><div class="product-bottom"><strong>Rp 90.000</strong><a href="order.html?product=Brownies%20Besar">Pilih kue <span aria-hidden="true">↗</span></a></div></div></article>
-          <article class="product-card"><div class="product-photo"><img src="assets/cake-bento.jpeg" alt="Cake bento warna ungu dan pink dalam kotak" loading="lazy"><span>03 / CAKE</span></div><div class="product-info"><h3>Cake Bento</h3><p>Kue mini dengan desain lucu, pas untuk hadiah kejutan yang personal.</p><div class="product-bottom"><strong>Rp 35.000</strong><a href="order.html?product=Cake%20Bento">Pilih kue <span aria-hidden="true">↗</span></a></div></div></article>
-          <article class="product-card"><div class="product-photo"><img src="assets/cake-sedang.jpeg" alt="Cake ukuran sedang Dapur Ambu" loading="lazy"><span>04 / CAKE</span></div><div class="product-info"><h3>Cake Sedang</h3><p>Kue ukuran sedang untuk ulang tahun atau acara keluarga kecil.</p><div class="product-bottom"><strong>Rp 55.000</strong><a href="order.html?product=Cake%20Sedang">Pilih kue <span aria-hidden="true">↗</span></a></div></div></article>
-          <article class="product-card"><div class="product-photo"><img src="assets/cake-besar.jpeg" alt="Cake ukuran besar Dapur Ambu" loading="lazy"><span>05 / CAKE</span></div><div class="product-info"><h3>Cake Besar</h3><p>Kue ukuran besar untuk pesta dan perayaan bersama keluarga.</p><div class="product-bottom"><strong>Rp 120.000</strong><a href="order.html?product=Cake%20Besar">Pilih kue <span aria-hidden="true">↗</span></a></div></div></article>
-          <article class="product-card"><div class="product-photo"><img src="assets/custom-cake.jpeg" alt="Custom cake hijau berbentuk karakter dengan dekorasi nama" loading="lazy"><span>06 / CUSTOM</span></div><div class="product-info"><h3>Custom Cake</h3><p>Bebas pilih tema dan desain. Kirim referensi agar kami bisa menyesuaikannya.</p><div class="product-bottom"><strong>Mulai Rp 35.000</strong><a href="order.html?product=Custom%20Cake">Pilih kue <span aria-hidden="true">↗</span></a></div></div></article>
+          <article class="product-card"><div class="product-photo"><button class="product-zoom" type="button" aria-label="Perbesar foto Brownies Medium"><img src="assets/brownies-medium.webp" alt="Brownies cokelat custom dengan buah dan dekorasi ulang tahun" loading="lazy"></button><span>01 / BROWNIES</span></div><div class="product-info"><h3>Brownies Medium</h3><p>Brownies cokelat dengan topping variatif, cocok untuk camilan atau hadiah sederhana.</p><div class="product-bottom"><strong>Rp 45.000</strong><a href="order.html?product=Brownies%20Medium">Pilih kue <span aria-hidden="true">↗</span></a></div></div></article>
+          <article class="product-card"><div class="product-photo"><button class="product-zoom" type="button" aria-label="Perbesar foto Brownies Besar"><img src="assets/brownies-besar.webp" alt="Brownies besar Dapur Ambu" loading="lazy"></button><span>02 / BROWNIES</span></div><div class="product-info"><h3>Brownies Besar</h3><p>Brownies cokelat ukuran besar untuk keluarga, acara kecil, atau berbagi.</p><div class="product-bottom"><strong>Rp 90.000</strong><a href="order.html?product=Brownies%20Besar">Pilih kue <span aria-hidden="true">↗</span></a></div></div></article>
+          <article class="product-card"><div class="product-photo"><button class="product-zoom" type="button" aria-label="Perbesar foto Cake Bento"><img src="assets/cake-bento.webp" alt="Cake bento warna ungu dan pink dalam kotak" loading="lazy"></button><span>03 / CAKE</span></div><div class="product-info"><h3>Cake Bento</h3><p>Kue mini dengan desain lucu, pas untuk hadiah kejutan yang personal.</p><div class="product-bottom"><strong>Rp 35.000</strong><a href="order.html?product=Cake%20Bento">Pilih kue <span aria-hidden="true">↗</span></a></div></div></article>
+          <article class="product-card"><div class="product-photo"><button class="product-zoom" type="button" aria-label="Perbesar foto Cake Sedang"><img src="assets/cake-sedang.webp" alt="Cake ukuran sedang Dapur Ambu" loading="lazy"></button><span>04 / CAKE</span></div><div class="product-info"><h3>Cake Sedang</h3><p>Kue ukuran sedang untuk ulang tahun atau acara keluarga kecil.</p><div class="product-bottom"><strong>Rp 55.000</strong><a href="order.html?product=Cake%20Sedang">Pilih kue <span aria-hidden="true">↗</span></a></div></div></article>
+          <article class="product-card"><div class="product-photo"><button class="product-zoom" type="button" aria-label="Perbesar foto Cake Besar"><img src="assets/cake-besar.webp" alt="Cake ukuran besar Dapur Ambu" loading="lazy"></button><span>05 / CAKE</span></div><div class="product-info"><h3>Cake Besar</h3><p>Kue ukuran besar untuk pesta dan perayaan bersama keluarga.</p><div class="product-bottom"><strong>Rp 120.000</strong><a href="order.html?product=Cake%20Besar">Pilih kue <span aria-hidden="true">↗</span></a></div></div></article>
+          <article class="product-card"><div class="product-photo"><button class="product-zoom" type="button" aria-label="Perbesar foto Custom Cake"><img src="assets/custom-cake.webp" alt="Custom cake hijau berbentuk karakter dengan dekorasi nama" loading="lazy"></button><span>06 / CUSTOM</span></div><div class="product-info"><h3>Custom Cake</h3><p>Bebas pilih tema dan desain. Kirim referensi agar kami bisa menyesuaikannya.</p><div class="product-bottom"><strong>Mulai Rp 35.000</strong><a href="order.html?product=Custom%20Cake">Pilih kue <span aria-hidden="true">↗</span></a></div></div></article>
         </div>
         <p class="catalog-note">Harga custom menyesuaikan ukuran dan tingkat kesulitan desain. Harga akhir dikonfirmasi oleh admin.</p>
       </section>
@@ -127,5 +128,6 @@
     </main>
     <footer><span>Little cakes. Lovely memories.</span><a href="https://www.instagram.com/dapurambu86/" target="_blank" rel="noopener noreferrer">@dapurambu86</a><span>Dapur Ambu <span aria-hidden="true">♡</span> Legok</span></footer>
   </div>
+  <dialog class="product-preview" aria-label="Foto produk diperbesar"><button class="preview-close" type="button" aria-label="Tutup foto">×</button><img alt=""></dialog>
 </body>
 </html>

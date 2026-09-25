@@ -81,3 +81,12 @@
 footer a{font-weight:700}
 @media(max-width:1100px){.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.order-section{grid-template-columns:1fr}.order-intro>p:not(.section-kicker){max-width:650px}.step-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.step:nth-child(3){border-left:0;padding-left:0;border-top:1px solid var(--border)}.step:nth-child(4){border-top:1px solid var(--border)}}
 @media(max-width:700px){.header-link{display:none}.content-section{padding:72px 22px}.section-heading{display:block;margin-bottom:30px}.section-heading>p{margin:20px 0 0}.content-section h2{font-size:clamp(52px,14vw,77px)}.product-grid{grid-template-columns:1fr;gap:20px}.product-photo{aspect-ratio:4/3.3}.product-info{min-height:0}.step-grid{grid-template-columns:1fr}.step,.step+.step,.step:nth-child(3),.step:nth-child(4){border-left:0;border-top:1px solid var(--border);padding:23px 0}.step:first-child{border-top:0}.step h3{margin:15px 0 7px}.order-form{padding:22px;box-shadow:6px 6px 0 var(--pink-deep)}.field-row{grid-template-columns:1fr}.form-heading{display:block}.form-heading p{margin-top:7px}.location-art{display:none}footer a{display:none}}
+.hero-menu-link{display:none}
+@media(max-width:700px){.hero-menu-link{display:flex;width:max-content;margin:12px auto 0;min-height:46px;padding:10px 20px;background:var(--pink-light);gap:15px}.hero-menu-link span{font-size:20px;line-height:1}.hero-note{margin-top:13px}}
+.product-zoom{display:block;width:100%;height:100%;padding:0;border:0;background:transparent;cursor:zoom-in}
+.product-zoom:focus-visible{outline-offset:-5px}
+.product-photo span{pointer-events:none}
+.product-preview{position:fixed;width:min(92vw,900px);max-width:92vw;max-height:92svh;padding:12px;border:1px solid var(--ink);background:var(--cream);box-shadow:0 20px 70px #2d1025aa}
+.product-preview::backdrop{background:#2d1025bb;backdrop-filter:blur(5px)}
+.product-preview img{display:block;width:100%;max-height:calc(92svh - 24px);object-fit:contain}
+.preview-close{position:absolute;top:20px;right:20px;width:44px;height:44px;border:1px solid var(--ink);border-radius:50%;background:var(--cream);font-size:30px;line-height:1;z-index:1}
