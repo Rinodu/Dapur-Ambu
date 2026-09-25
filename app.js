@@ -48,12 +48,28 @@
     }));
   }
 
-  const dialog = document.querySelector('.order-dialog');
-  document.querySelectorAll('[data-order]').forEach(button => button.addEventListener('click', () => dialog.showModal()));
-  document.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', event => {
-    if (event.target !== dialog) return;
-    const bounds = dialog.getBoundingClientRect();
-    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+  const orderForm = document.querySelector('#order-form');
+  document.querySelectorAll('[data-product]').forEach(link => link.addEventListener('click', () => {
+    orderForm.querySelector('[name="product"]').value = link.dataset.product;
+  }));
+  orderForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const data = Object.fromEntries(new FormData(orderForm));
+    const [year, month, day] = data.date.split('-');
+    const lines = [
+      'Halo Dapur Ambu, saya ingin konsultasi pesanan kue.',
+      '',
+      `Nama: ${data.name.trim()}`,
+      `Nomor WhatsApp: ${data.phone.trim()}`,
+      `Produk: ${data.product}`,
+      `Jumlah: ${data.quantity}`,
+      `Tanggal pengambilan: ${day}/${month}/${year}`,
+      `Jam pengambilan: ${data.time}`,
+      data.variant?.trim() ? `Ukuran/varian/tema: ${data.variant.trim()}` : '',
+      data.notes?.trim() ? `Catatan desain: ${data.notes.trim()}` : '',
+      '',
+      'Mohon informasi ketersediaan dan harga akhirnya. Terima kasih!'
+    ].filter(Boolean);
+    window.location.href = `https://wa.me/6281210028857?text=${encodeURIComponent(lines.join('\n'))}`;
   });
 })();
