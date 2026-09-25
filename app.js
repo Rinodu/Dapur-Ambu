@@ -13,11 +13,6 @@
   if (new URLSearchParams(window.location.search).get('from') === 'order') {
     window.history.replaceState(null, '', window.location.pathname + window.location.hash);
   } else playIntro();
-  document.querySelector('.replay').addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
-    playIntro();
-  });
-
   const motionControl = document.querySelector('.motion-control');
   motionControl.addEventListener('click', () => {
     const paused = body.classList.toggle('motion-paused');
