@@ -89,8 +89,6 @@
     preview.showModal();
   }));
   preview.querySelector('.preview-close').addEventListener('click', () => preview.close());
-  preview.addEventListener('click', event => {
-    if (event.target === preview || event.target === previewImage) preview.close();
-  });
+  previewImage.addEventListener('click', () => preview.close());
 
 })();

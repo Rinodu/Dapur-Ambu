@@ -5,12 +5,11 @@ import { runInNewContext } from 'node:vm';
 const handlers = {};
 const photo = { src: '/assets/cake-bento.webp', alt: 'Cake Bento' };
 const button = { querySelector: () => photo, addEventListener: (name, fn) => { handlers[name] = fn; } };
-const previewImage = {};
+const previewImage = { addEventListener: (_name, fn) => { handlers.image = fn; } };
 let opened = false;
 let closePreview;
 const preview = {
   querySelector: selector => selector === 'img' ? previewImage : { addEventListener: (_name, fn) => { closePreview = fn; } },
-  addEventListener: (_name, fn) => { handlers.backdrop = fn; },
   showModal: () => { opened = true; },
   close: () => { opened = false; }
 };
@@ -30,8 +29,7 @@ assert.equal(previewImage.alt, photo.alt);
 closePreview();
 assert.equal(opened, false);
 handlers.click();
-handlers.backdrop({ target: preview });
-assert.equal(opened, false);
-handlers.click();
-handlers.backdrop({ target: previewImage });
+assert.equal(handlers.backdrop, undefined);
+assert.equal(opened, true);
+handlers.image();
 assert.equal(opened, false);
