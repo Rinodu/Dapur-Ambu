@@ -34,4 +34,6 @@ assert.match(url.searchParams.get('text'), /Produk: Cake Bento/);
 assert.match(url.searchParams.get('text'), /Tanggal pengambilan: 10\/10\/2026/);
 assert.match(url.searchParams.get('text'), /Ukuran\/varian\/tema: Bunga & cokelat/);
 assert.doesNotMatch(url.searchParams.get('text'), /PESANAN CUSTOM/);
-assert.match(orderUrl('Custom Cake', 'Custom Cake').searchParams.get('text'), /\*🎂 PESANAN CUSTOM\*/);
+const customText = orderUrl('Custom Cake', 'Custom Cake').searchParams.get('text');
+assert.match(customText, /Produk: Custom Cake/);
+assert.doesNotMatch(customText, /PESANAN CUSTOM/);

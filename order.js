@@ -8,7 +8,6 @@
     const data = Object.fromEntries(new FormData(form));
     const [year, month, day] = data.date.split('-');
     const lines = [
-      data.product === 'Custom Cake' ? '*🎂 PESANAN CUSTOM*' : '*PESANAN KUE*',
       'Halo Dapur Ambu, saya ingin konsultasi pesanan kue.',
       '',
       `Nama: ${data.name.trim()}`,
