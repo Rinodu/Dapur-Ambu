@@ -67,7 +67,9 @@
 .location-section p:not(.section-kicker){line-height:1.8;color:var(--muted);margin:26px 0}
 .text-link{font-size:14px;font-weight:700}
 .text-link span{font-size:20px;margin-left:8px}
-.location-art{width:clamp(220px,28vw,420px);aspect-ratio:1;flex:none;border:1px solid var(--ink);border-radius:50%;display:flex;flex-direction:column;justify-content:center;align-items:center;transform:rotate(9deg);background:var(--cream);box-shadow:14px 14px 0 var(--pink-deep)}
+.location-art{width:clamp(220px,28vw,420px);aspect-ratio:1;flex:none;border:1px solid var(--ink);border-radius:50%;display:flex;flex-direction:column;justify-content:center;align-items:center;transform:rotate(9deg);background:var(--cream);box-shadow:14px 14px 0 var(--pink-deep);animation:badge-float 5s ease-in-out infinite}
+@keyframes badge-float{0%,100%{transform:translateY(0) rotate(9deg)}50%{transform:translateY(-18px) rotate(12deg)}}
+.motion-paused .location-art{animation-play-state:paused}
 .location-art span{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(18px,2.3vw,32px)}
 .location-art b{font-family:Georgia,serif;font-weight:400;font-size:clamp(95px,12vw,175px);line-height:.9}
 .location-art small{font-size:10px;letter-spacing:2px;font-weight:700}
