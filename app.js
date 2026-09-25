@@ -10,7 +10,9 @@
     body.classList.add('intro-running');
     introTimer = setTimeout(() => body.classList.remove('intro-running'), 3600);
   }
-  playIntro();
+  if (new URLSearchParams(window.location.search).get('from') === 'order') {
+    window.history.replaceState(null, '', window.location.pathname + window.location.hash);
+  } else playIntro();
   document.querySelector('.replay').addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'instant' });
     playIntro();
