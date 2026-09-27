@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=12">
-  <script src="order.js?v=4" defer></script>
+  <script src="order.js?v=5" defer></script>
 </head>
 <body class="order-body">
   <a class="skip-link" href="#utama">Lewati ke konten</a>
@@ -37,7 +37,7 @@
         <a class="order-back" href="./?from=order#kreasi">← Kembali ke kreasi</a>
         <p class="section-kicker">DARI DAPUR AMBU, DENGAN CINTA ✳</p>
         <h1>BUAT MOMENMU <em>LEBIH MANIS.</em></h1>
-        <p>Ceritakan kue yang kamu mau. Setelah formulir dikirim, pesananmu akan tercatat dan Ambu akan menghubungimu untuk konfirmasi.</p>
+        <p>Ceritakan kue yang kamu mau. Setelah pesanan tercatat, kamu akan langsung membuka WhatsApp untuk konfirmasi dengan Ambu.</p>
         <div class="order-page-note"><span aria-hidden="true">♡</span><p>Punya desain sendiri? Tulis temanya di sini, lalu kirim foto referensi saat mengobrol di WhatsApp.</p></div>
       </div>
       <form class="order-form order-page-form" id="order-form" method="post" action="https://script.google.com/macros/s/AKfycbyCcpVuKg4TWas9zR9SeXdkmHNTpXGPI7lXfzsX7YDwVmgUEo14EzUyRWI5a9ih4P4HzA/exec">
@@ -59,8 +59,9 @@
           <label>Catatan desain<textarea name="notes" rows="3" placeholder="Tulisan di kue, warna, topping, atau detail lain"></textarea></label>
         </div>
         <label class="form-check"><input type="checkbox" name="pickup" required><span>Saya memahami pesanan diambil di tempat dan baru berlaku setelah dikonfirmasi admin.</span></label>
-        <button class="button button-primary form-submit" type="submit">Kirim pesanan <span class="button-arrow" aria-hidden="true">↗</span></button>
-        <p class="form-note">Pesananmu akan dicatat. Harga dan jadwal berlaku setelah dikonfirmasi Ambu.</p>
+        <button class="button button-primary form-submit" type="submit">Lanjut ke WhatsApp <span class="button-arrow" aria-hidden="true">↗</span></button>
+        <p class="form-note">Pesanan dicatat lebih dulu. Harga dan jadwal berlaku setelah dikonfirmasi Ambu di WhatsApp.</p>
+        <p class="form-note" id="order-feedback" role="alert" hidden></p>
       </form>
     </main>
     <footer><span>Little cakes. Lovely memories.</span><a href="./?from=order">Dapur Ambu ♡ Legok</a></footer>
