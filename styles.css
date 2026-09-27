@@ -92,3 +92,24 @@ footer a{font-weight:700}
 .product-preview img{display:block;width:100%;max-height:calc(92svh - 24px);object-fit:contain;cursor:zoom-out}
 .preview-close{position:absolute;top:20px;right:20px;width:44px;height:44px;border:1px solid var(--ink);border-radius:50%;background:var(--cream);font-size:30px;line-height:1;z-index:1}
 @media(max-width:700px){.hero{max-height:900px}.cake-three{width:34%;right:-3%;bottom:3%}.story-section h2{font-size:clamp(43px,10vw,56px)}.product-photo{aspect-ratio:4/4.5}.product-photo img{object-position:center 40%}.order-page-intro{padding:28px 22px}.order-back{margin-bottom:22px}.order-page-intro h1{font-size:clamp(48px,11vw,64px);margin:18px 0}.order-page-intro>p:not(.section-kicker){line-height:1.65}.order-page-form{margin-top:16px}footer{justify-content:center;flex-wrap:wrap;text-align:center}footer a{display:inline-block}footer>span:first-child{flex-basis:100%}}
+
+/* Kartu langkah pemesanan */
+.step-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;border:0}
+.step-grid .step,.step-grid .step+.step{position:relative;display:flex;flex-direction:column;min-height:292px;padding:25px;border:1px solid var(--ink);border-radius:18px;background:#fffaf2;box-shadow:6px 6px 0 rgba(89,36,58,.13);transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.step-grid .step:nth-child(even){background:#ffe9f1}
+.step-grid .step:hover{transform:translateY(-7px);box-shadow:9px 12px 0 rgba(89,36,58,.17)}
+.step-grid .step-number{position:absolute;top:24px;right:24px;font-size:27px;line-height:1}
+.step-icon{display:grid;place-items:center;width:82px;height:82px;border:1px solid var(--ink);border-radius:23px;background:var(--pink-light);box-shadow:4px 4px 0 var(--pink-deep);transform:rotate(-5deg)}
+.step:nth-child(even) .step-icon{background:var(--cream);transform:rotate(5deg)}
+.step-icon svg{width:56px;height:56px;stroke:var(--ink);stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round;animation:step-float 3.8s ease-in-out infinite}
+.step:nth-child(2) .step-icon svg{animation-delay:-.9s}
+.step:nth-child(3) .step-icon svg{animation-delay:-1.8s}
+.step:nth-child(4) .step-icon svg{animation-delay:-2.7s}
+.step-grid .step h3{margin:auto 0 9px;font-size:30px}
+.step-grid .step p{font-size:13px;line-height:1.6}
+@keyframes step-float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-5px) rotate(4deg)}}
+@media(max-width:1100px){.step-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.step-grid{grid-template-columns:1fr;gap:16px}.step-grid .step,.step-grid .step+.step,.step-grid .step:nth-child(3),.step-grid .step:nth-child(4){min-height:232px;padding:22px;border:1px solid var(--ink)}.step-icon{width:70px;height:70px}.step-icon svg{width:48px;height:48px}.step-grid .step h3{margin-top:26px}}
+@media(prefers-reduced-motion:reduce){.step-grid .step{transition:none}.step-icon svg{animation:none}}
+
+
