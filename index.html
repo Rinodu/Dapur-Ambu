@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="stylesheet" href="styles.css?v=13">
   <script src="app.js?v=9" defer></script>
 </head>
 <body>
@@ -93,11 +93,16 @@
 
       <section class="steps-section content-section" id="cara-pesan" aria-labelledby="steps-title">
         <div class="section-heading"><div><p class="section-kicker">SEDERHANA &amp; PERSONAL</p><h2 id="steps-title">Cara <i>pesan</i></h2></div><p>Dari ide pertama sampai kue siap menemani harimu.</p></div>
-        <div class="step-grid"><div class="step"><span>01</span><h3>Pilih kue</h3><p>Lihat kreasi kami, lalu pilih produk atau ceritakan tema custom yang kamu inginkan.</p></div><div class="step"><span>02</span><h3>Isi detail</h3><p>Masukkan tanggal, jumlah, dan catatan. Referensi desain bisa dikirim saat konfirmasi.</p></div><div class="step"><span>03</span><h3>Konfirmasi</h3><p>Admin akan memastikan desain, ketersediaan, dan harga akhir melalui WhatsApp.</p></div><div class="step"><span>04</span><h3>Ambil pesanan</h3><p>Kue diambil di tempat sesuai jadwal yang telah disepakati.</p></div></div>
+        <div class="step-grid" aria-label="Empat langkah memesan kue">
+          <article class="step"><span class="step-number">01</span><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M13 39h38v11H13zM17 39V27h30v12M22 27c0-8 5-13 10-13s10 5 10 13M32 14V8"/><path d="M24 32h2m6 0h2m6 0h2"/></svg></div><h3>Pilih kue</h3><p>Lihat kreasi kami, lalu pilih produk atau ceritakan tema custom yang kamu inginkan.</p></article>
+          <article class="step"><span class="step-number">02</span><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><rect x="15" y="13" width="34" height="43" rx="4"/><path d="M24 13v-4h16v4M23 27h18M23 36h18M23 45h11"/><path d="m38 44 3 3 5-6"/></svg></div><h3>Isi detail</h3><p>Masukkan tanggal, jumlah, dan catatan. Referensi desain bisa dikirim saat konfirmasi.</p></article>
+          <article class="step"><span class="step-number">03</span><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M12 15h40v29H30L18 53v-9h-6z"/><path d="M22 28h20M22 35h13"/></svg></div><h3>Konfirmasi</h3><p>Setelah data tersimpan, lanjut langsung ke WhatsApp untuk memastikan desain, ketersediaan, dan harga.</p></article>
+          <article class="step"><span class="step-number">04</span><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M13 24h38l-3 31H16zM23 24v-7a9 9 0 0 1 18 0v7M14 33h36"/><path d="m26 43 5 5 8-10"/></svg></div><h3>Ambil pesanan</h3><p>Kue diambil di tempat sesuai jadwal yang telah disepakati.</p></article>
+        </div>
       </section>
 
       <section class="order-section content-section order-teaser" id="pesan" aria-labelledby="order-title">
-        <div class="order-intro"><p class="section-kicker">PUNYA MOMEN ISTIMEWA?</p><h2 id="order-title">Yuk, buat kue <i>impianmu.</i></h2><p>Ceritakan kue dan tanggal yang kamu inginkan. Kami siapkan ringkasan pesanan untuk dikirim lewat WhatsApp.</p><a class="button button-primary" href="order.html">Mulai pesan <span class="button-arrow" aria-hidden="true">↗</span></a></div>
+        <div class="order-intro"><p class="section-kicker">PUNYA MOMEN ISTIMEWA?</p><h2 id="order-title">Yuk, buat kue <i>impianmu.</i></h2><p>Ceritakan kue dan tanggal yang kamu inginkan. Pesanan tercatat, lalu kamu langsung lanjut ke WhatsApp untuk konfirmasi.</p><a class="button button-primary" href="order.html">Mulai pesan <span class="button-arrow" aria-hidden="true">↗</span></a></div>
         <div class="order-teaser-art" aria-hidden="true">
           <svg viewBox="0 0 420 370" fill="none" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="210" cy="348" rx="150" ry="12" fill="#59243a" opacity=".1"/>
@@ -131,3 +136,5 @@
   <dialog class="product-preview" aria-label="Foto produk diperbesar"><button class="preview-close" type="button" aria-label="Tutup foto">×</button><img alt=""></dialog>
 </body>
 </html>
+
+
