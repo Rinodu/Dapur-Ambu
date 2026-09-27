@@ -3,8 +3,7 @@
   const product = new URLSearchParams(window.location.search).get('product');
   if ([...form.elements.product.options].some(option => option.value === product)) form.elements.product.value = product;
 
-  form.addEventListener('submit', event => {
-    event.preventDefault();
+  form.addEventListener('submit', () => {
     const data = Object.fromEntries(new FormData(form));
     const [year, month, day] = data.date.split('-');
     const lines = [
@@ -24,6 +23,15 @@
       '',
       'Mohon informasi ketersediaan dan harga akhirnya. Terima kasih!'
     ].filter(line => line !== null);
-    window.location.href = `https://wa.me/6281210028857?text=${encodeURIComponent(lines.join('\n'))}`;
+    if (!form.elements.orderId.value) form.elements.orderId.value = crypto.randomUUID();
+    form.elements.neededDate.value = data.date;
+    form.elements.note.value = [
+      `Jam pengambilan: ${data.time}`,
+      data.variant?.trim() ? `Ukuran/varian/tema: ${data.variant.trim()}` : null,
+      data.notes?.trim() ? `Catatan desain: ${data.notes.trim()}` : null
+    ].filter(Boolean).join(' | ');
+    form.elements.whatsappText.value = lines.join('\n');
   });
 })();
+
+
