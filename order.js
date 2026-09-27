@@ -3,7 +3,10 @@
   const product = new URLSearchParams(window.location.search).get('product');
   if ([...form.elements.product.options].some(option => option.value === product)) form.elements.product.value = product;
 
-  form.addEventListener('submit', () => {
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    const submitButton = form.querySelector('[type="submit"]');
+    submitButton.disabled = true;
     const data = Object.fromEntries(new FormData(form));
     const [year, month, day] = data.date.split('-');
     const lines = [
@@ -31,6 +34,19 @@
       data.notes?.trim() ? `Catatan desain: ${data.notes.trim()}` : null
     ].filter(Boolean).join(' | ');
     form.elements.whatsappText.value = lines.join('\n');
+    try {
+      await fetch(form.action, {
+        method: 'POST',
+        body: new URLSearchParams(new FormData(form)),
+        mode: 'no-cors'
+      });
+      window.location.assign(`https://wa.me/6281210028857?text=${encodeURIComponent(form.elements.whatsappText.value)}`);
+    } catch (error) {
+      submitButton.disabled = false;
+      const feedback = form.querySelector('#order-feedback');
+      feedback.textContent = 'Pesanan belum tersimpan. Periksa koneksi lalu coba lagi.';
+      feedback.hidden = false;
+    }
   });
 })();
 
