@@ -11,3 +11,11 @@ Pengolahan untuk hero: ekstraksi latar transparan melalui built-in ImageGen dari
 Prompt per foto: “Use case: background-extraction. Edit target: the supplied official cake photograph. Remove only the surrounding room/table/background, text overlays outside the cake, and cake board. Keep the actual cake itself, original frosting, toppers, decoration, colors, text, and perspective unchanged. Clean natural photographic edges; center tightly with 5% padding. Produce an actual transparent alpha background. Do not redesign, restyle, add, or change the cake.”
 
 Foto katalog `assets/brownies-medium.jpeg`, `brownies-besar.jpeg`, `cake-bento.jpeg`, `cake-sedang.jpeg`, `cake-besar.jpeg`, dan `custom-cake.jpeg` disalin tanpa pengolahan dari folder `images/` di repo [Rinodu/dapur-ambu-website](https://github.com/Rinodu/dapur-ambu-website).
+
+
+## Galeri custom dan logo
+- Brownies Celebration, A Little Wonderland, Hello Little Friend: foto asli yang diberikan pemilik proyek.
+- Logo dan favicon: LOGO.jpeg yang diberikan pemilik proyek.
+- Pink Lily: https://www.instagram.com/p/DY1G-DxJ9qx/
+- Purple Birthday: https://www.instagram.com/p/DXTNSqMidmG/
+Foto galeri dikompres ke WebP tanpa mengubah desain kue.

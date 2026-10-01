@@ -3,6 +3,10 @@
   const product = new URLSearchParams(window.location.search).get('product');
   if ([...form.elements.product.options].some(option => option.value === product)) form.elements.product.value = product;
 
+  const theme = new URLSearchParams(window.location.search).get('theme');
+  const themes = ['Brownies Celebration', 'A Little Wonderland', 'Hello, Little Friend', 'Pink Lily', 'Purple Birthday'];
+  if (themes.includes(theme)) form.elements.variant.value = theme;
+
   form.addEventListener('submit', async event => {
     event.preventDefault();
     const submitButton = form.querySelector('[type="submit"]');
