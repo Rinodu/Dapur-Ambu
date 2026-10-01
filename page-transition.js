@@ -86,7 +86,9 @@
   });
   // Prevent an unhandled rejection if the visitor never opens the prepared page.
   ready.catch(() => {});
-  frame.src = targetUrl.href;
+  const preparedUrl = new URL(targetUrl);
+  preparedUrl.searchParams.set('prepared', '3');
+  frame.src = preparedUrl.href;
   document.body.append(frame);
 
   function isolatePage(open) {
