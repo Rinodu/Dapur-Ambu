@@ -1,4 +1,4 @@
-.gallery-body{background:var(--cream)}
+.gallery-body{background:linear-gradient(180deg,var(--pink-light),var(--cream) 60%,var(--cream))}
 .gallery-body main{padding-bottom:45px}
 .gallery-heading{text-align:center;position:relative;padding:35px 20px 22px;overflow:hidden}
 .gallery-heading h1{font-size:clamp(60px,6vw,92px);line-height:.95}

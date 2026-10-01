@@ -87,7 +87,7 @@
   // Prevent an unhandled rejection if the visitor never opens the prepared page.
   ready.catch(() => {});
   const preparedUrl = new URL(targetUrl);
-  preparedUrl.searchParams.set('prepared', '4');
+  preparedUrl.searchParams.set('prepared', '5');
   frame.src = preparedUrl.href;
   document.body.append(frame);
 

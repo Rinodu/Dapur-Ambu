@@ -144,11 +144,11 @@ footer{padding-bottom:100px}
 @media(max-width:700px){.site-header,.order-body .site-header{height:auto;min-height:104px;padding:14px 16px;flex-wrap:wrap;gap:14px}.site-header .brand{padding-left:58px;min-height:48px}.brand-logo{width:48px;height:48px}.site-header .brand>span{font-size:25px}.site-header .brand small{font-size:8px;letter-spacing:1px}.site-header nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 18px;width:100%}.site-header nav .header-link{display:inline-flex;align-items:center;min-height:44px;font-size:12px}.site-header nav .button-small{padding:10px 16px;min-height:44px;font-size:12px}.gallery-teaser{grid-template-columns:1fr;gap:40px}.teaser-photo{width:min(85%,290px)}.gallery-teaser .button{font-size:13px}.order-page-form{margin-bottom:100px}.gallery-body .site-header nav{justify-content:space-between}input,select,textarea{font-size:16px}}
 @media(prefers-reduced-motion:reduce){.teaser-photo{transition:none}}
 /* Galeri: foto bebas bingkai dan transisi dari titik klik */
-.teaser-photo{width:min(100%,450px);padding:10px 20px 36px;border:0;background:transparent;box-shadow:none;transform:none;isolation:isolate}
+.teaser-photo{width:min(100%,450px);padding:10px 20px 36px;border:2px solid var(--ink);background:transparent;box-shadow:none;transform:none;isolation:isolate}
 .teaser-photo::before{content:"";position:absolute;inset:12% 3% 12%;border-radius:50%;background:radial-gradient(circle,#f5bdd288,transparent 70%);z-index:-1}
 .teaser-photo img{height:440px;width:100%;object-fit:contain;filter:drop-shadow(0 22px 14px #59243a25);animation:teaser-bob 5s ease-in-out infinite}
 .teaser-photo:hover{transform:translateY(-5px)}
-.teaser-photo span{bottom:0}
+.teaser-photo span{bottom:8px}
 html{scrollbar-gutter:stable}
 .page-portal{position:fixed;left:0;top:0;width:100vw;height:100%;border:0;z-index:10000;background:var(--cream);clip-path:circle(0px at 50% 50%);pointer-events:none;will-change:clip-path,mask-image}
 .page-portal.portal-open{pointer-events:auto}
@@ -159,3 +159,11 @@ html{scrollbar-gutter:stable}
 @keyframes teaser-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 @media(max-width:700px){.teaser-photo{width:min(100%,350px)}.teaser-photo img{height:350px}}
 @media(prefers-reduced-motion:reduce){.teaser-photo img{animation:none}}
+
+/* Continue the same edge colors across each page section. */
+body:not(.order-body):not(.gallery-body) .site-header{background:var(--pink-light)}
+.hero{background:linear-gradient(180deg,var(--pink-light),var(--pink))}
+.location-section{background:linear-gradient(180deg,var(--pink-light),var(--cream))}
+footer{background:linear-gradient(180deg,var(--cream),var(--pink))}
+.order-page{background:linear-gradient(180deg,var(--cream),var(--pink-light) 55%,var(--cream))}
+.order-page-intro{background:linear-gradient(160deg,var(--ink),#78384f)}
