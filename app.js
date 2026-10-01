@@ -12,7 +12,7 @@
   }
   if (new URLSearchParams(window.location.search).get('from') === 'order') {
     window.history.replaceState(null, '', window.location.pathname + window.location.hash);
-  } else playIntro();
+  } else if (!body.classList.contains('circle-arrival')) playIntro();
   const motionControl = document.querySelector('.motion-control');
   motionControl.addEventListener('click', () => {
     const paused = body.classList.toggle('motion-paused');

@@ -23,8 +23,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=18">
-  <script src="app.js?v=9" defer></script>
+  <link rel="stylesheet" href="styles.css?v=19">
+  <script src="page-transition.js?v=1" defer></script>
+  <script src="app.js?v=10" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#utama">Lewati ke konten</a>
@@ -42,7 +43,7 @@
     <header class="site-header">
       <a class="brand" href="./" aria-label="Dapur Ambu, beranda"><img class="brand-logo" src="assets/logo.webp" alt="" width="64" height="64"><span>Dapur <i>Ambu</i><span class="brand-star" aria-hidden="true">✳</span></span><small>HOMEMADE CAKES · LEGOK</small></a>
       <nav aria-label="Navigasi utama">
-        <a class="header-link" href="#kreasi">Kreasi</a><a class="header-link gallery-nav" href="gallery.html">Galeri custom</a>
+        <a class="header-link" href="#kreasi">Kreasi</a><a class="header-link gallery-nav" href="gallery.html" data-circle>Galeri custom</a>
         <a class="header-link" href="#cara-pesan">Cara pesan</a>
         <a class="instagram-link" href="https://www.instagram.com/dapurambu86/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg><span>@dapurambu86</span></a>
         <a class="button button-small" href="order.html">Pesan kue <span aria-hidden="true">↗</span></a>
@@ -130,7 +131,7 @@
         </div>
       </section>
 
-      <section class="gallery-teaser content-section"><div><p class="section-kicker">CUSTOM, SEPERTI CERITAMU</p><h2>Kue kamu.<br><i>Cerita kamu.</i></h2><p>Jelajahi lima kreasi pilihan. Dari brownies bertumpuk sampai karakter tiga dimensi.</p><a class="button button-primary" href="gallery.html">Jelajahi galeri <span class="button-arrow" aria-hidden="true">↗</span></a></div><a class="teaser-photo" href="gallery.html" aria-label="Lihat galeri custom cake"><img src="assets/gallery-3d.webp" alt="Custom cake karakter tiga dimensi berwarna hijau" loading="lazy" width="788" height="1400"><span>MADE FOR YOUR MOMENT ✳</span></a></section>
+      <section class="gallery-teaser content-section"><div><p class="section-kicker">CUSTOM, SEPERTI CERITAMU</p><h2>Kue kamu.<br><i>Cerita kamu.</i></h2><p>Jelajahi lima kreasi pilihan. Dari brownies bertumpuk sampai karakter tiga dimensi.</p><a class="button button-primary" href="gallery.html" data-circle>Jelajahi galeri <span class="button-arrow" aria-hidden="true">↗</span></a></div><a class="teaser-photo" href="gallery.html" data-circle aria-label="Lihat galeri custom cake"><img src="assets/gallery-tier-cutout.webp" alt="Custom cake dua tingkat hijau dengan dekorasi karakter" loading="lazy" width="1088" height="1440"><span>MADE FOR YOUR MOMENT ✳</span></a></section>
       <section class="location-section content-section" id="lokasi" aria-labelledby="location-title"><div><p class="section-kicker">TEMUKAN KAMI</p><h2 id="location-title">Dapur kecil kami<br>di <i>Legok.</i></h2><p>Dapur Ambu Home Bakery<br>Jl. Raya Parung Panjang No.75, Caringin, Kec. Legok, Kabupaten Tangerang, Banten 15820.</p><a class="maps-button" href="https://maps.google.com/?q=Dapur+Ambu+Jl.+Raya+Parung+Panjang+No.75+Legok+Tangerang" target="_blank" rel="noopener noreferrer"><svg class="maps-icon" viewBox="0 0 24 32" aria-hidden="true"><path fill="#34a853" d="M12 0C5.4 0 0 5.4 0 12c0 8 12 20 12 20s12-12 12-20C24 5.4 18.6 0 12 0Z"/><path fill="#4285f4" d="M12 0C5.4 0 0 5.4 0 12c0 3.2 1.9 7.1 4.2 10.5L20.5 3.5A12 12 0 0 0 12 0Z"/><path fill="#fbbc04" d="m4.2 22.5 6-7L1.1 7A12 12 0 0 0 0 12c0 3.2 1.9 7.1 4.2 10.5Z"/><path fill="#ea4335" d="m1.1 7 6.2 5.8L15.9.7A12 12 0 0 0 1.1 7Z"/><circle cx="12" cy="12" r="4.5" fill="#fff"/></svg><span>Lihat di Google Maps</span><span class="maps-arrow" aria-hidden="true">↗</span></a></div><div class="location-art" aria-hidden="true"><span>made with love</span><svg viewBox="0 0 420 370"><use href="#chocolate-pair"/></svg><small>LEGOK · TANGERANG</small></div></section>
     </main>
     <footer><span>Little cakes. Lovely memories.</span><a href="https://www.instagram.com/dapurambu86/" target="_blank" rel="noopener noreferrer">@dapurambu86</a><span>Dapur Ambu <span aria-hidden="true">♡</span> Legok</span></footer>

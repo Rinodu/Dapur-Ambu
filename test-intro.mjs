@@ -4,12 +4,12 @@ import { runInNewContext } from 'node:vm';
 
 const script = readFileSync(new URL('./app.js', import.meta.url), 'utf8');
 
-function loadPage(search, hash = '') {
+function loadPage(search, hash = '', circleArrival = false) {
   let introPlayed = false;
   let replacedUrl;
   const element = { addEventListener() {}, querySelector() { return element; } };
   const document = {
-    body: { offsetWidth: 0, classList: { remove() {}, add(name) { if (name === 'intro-running') introPlayed = true; } } },
+    body: { offsetWidth: 0, classList: { contains(name) { return name === 'circle-arrival' && circleArrival; }, remove() {}, add(name) { if (name === 'intro-running') introPlayed = true; } } },
     querySelector() { return element; },
     querySelectorAll() { return []; }
   };
@@ -23,6 +23,7 @@ function loadPage(search, hash = '') {
 }
 
 assert.equal(loadPage('').introPlayed, true);
+assert.equal(loadPage('', '', true).introPlayed, false);
 const returned = loadPage('?from=order', '#kreasi');
 assert.equal(returned.introPlayed, false);
 assert.equal(returned.replacedUrl, '/Dapur-Ambu/#kreasi');
