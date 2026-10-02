@@ -9,11 +9,12 @@
   const radius = Math.hypot(innerWidth, innerHeight) + 24;
   function animate(from, to, done) {
     if (window.gsap) {
+      gsap.killTweensOf(overlay);
       gsap.fromTo(overlay, { clipPath: from }, { clipPath: to, duration: .55,
         ease: 'power3.inOut', onComplete: done });
     } else {
       overlay.animate([{ clipPath: from }, { clipPath: to }],
-        { duration: 550, easing: 'ease-in-out', fill: 'forwards' }).finished.then(done);
+        { duration: 550, easing: 'ease-in-out', fill: 'forwards' }).finished.then(done).catch(() => {});
     }
   }
   let arrival;
