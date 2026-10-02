@@ -175,3 +175,18 @@ footer{background:linear-gradient(180deg,var(--cream),var(--pink))}
 .step-connector{display:block;width:100%;height:2px;background:var(--ink);margin-top:20px;transform-origin:left;pointer-events:none}
 
 .form-transition{position:fixed;inset:0;z-index:20000;background:var(--cream);clip-path:circle(0px at 50% 50%);pointer-events:none}
+.steps-controls{display:none}
+@media(max-width:700px){
+  .step-grid{position:relative;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:calc(100% - 16px);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:8px;padding:8px 8px 18px;scrollbar-width:none;overscroll-behavior-x:contain}
+  .step-grid::-webkit-scrollbar{display:none}
+  .step-grid .step{scroll-snap-align:start;scroll-snap-stop:always;min-width:0}
+  .step-grid .step:hover{transform:none;box-shadow:6px 6px 0 rgba(89,36,58,.13)}
+  .steps-controls{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:16px}
+  .steps-controls>button{width:44px;height:44px;border:1px solid var(--ink);border-radius:50%;background:var(--cream);font-size:22px}
+  .steps-controls>button:disabled{opacity:.35;cursor:default}
+  .step-dots{display:flex;gap:0}
+  .step-dots button{position:relative;width:30px;height:44px;background:transparent;border:0}
+  .step-dots button::after{content:'';position:absolute;width:8px;height:8px;top:18px;left:11px;border-radius:50%;background:var(--ink);opacity:.25;transition:transform .25s,opacity .25s}
+  .step-dots button[aria-current=true]::after{opacity:1;transform:scale(1.4)}
+  .step-status{font-size:12px;white-space:nowrap}
+}
