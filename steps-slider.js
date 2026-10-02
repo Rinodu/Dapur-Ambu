@@ -25,7 +25,19 @@
       behavior: animated() ? 'smooth' : 'instant' });
   }
   function update() {
-    if (!mobile.matches) return;
+    if (!mobile.matches) {
+      cards.forEach(card => {
+        card.style.removeProperty('--step-scale');
+        card.style.removeProperty('--step-blur');
+      });
+      return;
+    }
+    const spacing = cards[1].offsetLeft - cards[0].offsetLeft;
+    cards.forEach(card => {
+      const distance = Math.min(1, Math.abs(card.offsetLeft - cards[0].offsetLeft - track.scrollLeft) / spacing);
+      card.style.setProperty('--step-scale', animated() ? 1 - distance * .08 : 1);
+      card.style.setProperty('--step-blur', `${animated() ? distance * 2 : 0}px`);
+    });
     const index = cards.reduce((best, card, i) =>
       Math.abs(card.offsetLeft - cards[0].offsetLeft - track.scrollLeft) <
       Math.abs(cards[best].offsetLeft - cards[0].offsetLeft - track.scrollLeft) ? i : best, 0);
@@ -34,8 +46,6 @@
     dots.forEach((dot, i) => dot.setAttribute('aria-current', String(i === index)));
     cards.forEach((card, i) => card.classList.toggle('step-active', i === index));
     status.textContent = `${index + 1} / ${cards.length}`;
-    if (window.gsap && animated()) gsap.fromTo(cards[index].querySelector('.step-icon'),
-      { y: 7 }, { y: 0, duration: .45, ease: 'power2.out', overwrite: true, clearProps: 'transform' });
   }
   track.tabIndex = 0;
   track.addEventListener('keydown', event => {
@@ -43,7 +53,13 @@
     event.preventDefault();
     go(current + (event.key === 'ArrowRight' ? 1 : -1));
   });
-  track.addEventListener('scroll', update, { passive: true });
+  let frame;
+  track.addEventListener('scroll', () => {
+    if (frame) return;
+    frame = requestAnimationFrame(() => { frame = null; update(); });
+  }, { passive: true });
+  reduced.addEventListener('change', update);
+  document.querySelector('.motion-control')?.addEventListener('click', update);
   addEventListener('resize', () => { current = -1; update(); });
   update();
 })();

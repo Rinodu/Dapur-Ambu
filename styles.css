@@ -179,9 +179,8 @@ footer{background:linear-gradient(180deg,var(--cream),var(--pink))}
 @media(max-width:700px){
   .step-grid{position:relative;width:calc(100% + 44px);margin-inline:-22px;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:100%;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:9%;padding:12px 9% 22px;scrollbar-width:none;overscroll-behavior-x:contain}
   .step-grid::-webkit-scrollbar{display:none}
-  .step-grid .step{scroll-snap-align:center;scroll-snap-stop:always;min-width:0;transform:scale(.92);filter:blur(2px);transition:transform .4s var(--ease),filter .4s var(--ease)}
-  .step-grid .step:hover{transform:scale(.92);box-shadow:6px 6px 0 rgba(89,36,58,.13)}
-  .step-grid .step.step-active{transform:scale(1);filter:none}
+  .step-grid .step{scroll-snap-align:center;scroll-snap-stop:always;min-width:0;transform:scale(var(--step-scale,1));filter:blur(var(--step-blur,0px));transition:none}
+  .step-grid .step:hover{transform:scale(var(--step-scale,1));box-shadow:6px 6px 0 rgba(89,36,58,.13)}
   .motion-paused .step-grid .step{transition:none}
   .steps-controls{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:16px}
   .step-dots{display:flex;gap:0}

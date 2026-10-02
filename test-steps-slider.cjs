@@ -23,13 +23,36 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
     await page.waitForFunction(() => document.querySelector('.step-status').textContent === '2 / 4');
     await page.waitForTimeout(700);
     assert.equal(await page.locator('.step-active').count(), 1);
-    assert.equal(await page.locator('.step').nth(1).evaluate(el => getComputedStyle(el).filter), 'none');
+    assert.equal(await page.locator('.step').nth(1).evaluate(el => getComputedStyle(el).filter), 'blur(0px)');
     assert.equal(await page.locator('.step').first().evaluate(el => getComputedStyle(el).filter), 'blur(2px)');
     assert.equal(await page.locator('.step-grid').evaluate(track => {
       const viewport = track.getBoundingClientRect();
       const cards = [...track.children].map(card => card.getBoundingClientRect());
       return cards[0].right > viewport.left && cards[2].left < viewport.right;
     }), true, 'Both adjacent cards must peek into view');
+    const samples = await page.locator('.step-grid').evaluate(async track => {
+      track.style.scrollSnapType = 'none';
+      track.style.scrollBehavior = 'auto';
+      const cards = [...track.children];
+      const spacing = cards[1].offsetLeft - cards[0].offsetLeft;
+      const samples = [];
+      for (const progress of [.25, .5, .75]) {
+        track.scrollLeft = spacing * progress;
+        await new Promise(resolve => setTimeout(resolve, 70));
+        samples.push(cards.slice(0, 2).map(card => ({
+          scale: Number(card.style.getPropertyValue('--step-scale')),
+          blur: parseFloat(card.style.getPropertyValue('--step-blur'))
+        })));
+      }
+      track.style.scrollSnapType = '';
+      track.style.scrollBehavior = '';
+      return samples;
+    });
+    for (let i = 0; i < samples.length; i++) {
+      const progress = [.25, .5, .75][i];
+      assert.ok(Math.abs(samples[i][0].scale - (1 - .08 * progress)) < .002);
+      assert.ok(Math.abs(samples[i][1].blur - (2 * (1 - progress))) < .03);
+    }
     await page.locator('.step-dots button').last().click();
     await page.waitForFunction(() => document.querySelector('.step-status').textContent === '4 / 4');
     await page.emulateMedia({ reducedMotion: 'reduce' });
