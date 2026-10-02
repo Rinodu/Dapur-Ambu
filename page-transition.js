@@ -27,6 +27,7 @@
       if (!link || !ordinaryClick(event) || link.target === '_blank' || link.hasAttribute('download')) return;
       const url = new URL(link.href, location.href);
       if (url.origin !== location.origin || (url.pathname === location.pathname && url.hash)) return;
+      if (url.pathname.endsWith('/order.html') && !reduced.matches) return;
       event.preventDefault();
       if (link.hasAttribute('data-circle')) {
         window.parent.postMessage({type: 'ambu-portal-navigate', href: url.href, ...clickPoint(event, link)}, location.origin);

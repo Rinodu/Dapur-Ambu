@@ -173,3 +173,5 @@ footer{background:linear-gradient(180deg,var(--cream),var(--pink))}
 .heading-line{display:block}
 .motion-paused .step-icon svg{animation-play-state:paused}
 .step-connector{display:block;width:100%;height:2px;background:var(--ink);margin-top:20px;transform-origin:left;pointer-events:none}
+
+.form-transition{position:fixed;inset:0;z-index:20000;background:var(--cream);clip-path:circle(0px at 50% 50%);pointer-events:none}
