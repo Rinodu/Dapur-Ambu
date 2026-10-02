@@ -23,9 +23,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=22">
+  <link rel="stylesheet" href="styles.css?v=23">
   <script src="page-transition.js?v=5" defer></script>
-  <script src="app.js?v=10" defer></script>
+  <script src="vendor/gsap-3.13.0.min.js" defer></script>
+  <script src="vendor/ScrollTrigger-3.13.0.min.js" defer></script>
+  <script src="app.js?v=11" defer></script>
+  <script src="motion.js?v=3" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#utama">Lewati ke konten</a>
@@ -81,7 +84,7 @@
       </section>
 
       <section class="catalog-section content-section" id="kreasi" aria-labelledby="catalog-title">
-        <div class="section-heading"><div><p class="section-kicker">DARI DAPUR KAMI</p><h2 id="catalog-title">Kreasi &amp; <i>menu</i></h2></div><p>Pilih yang kamu suka. Untuk desain khusus, harga mengikuti ukuran dan tingkat kesulitan.</p></div>
+        <div class="section-heading"><div><p class="section-kicker">DARI DAPUR KAMI</p><h2 id="catalog-title"><span class="heading-line">Kreasi &amp;</span> <span class="heading-line"><i>menu</i></span></h2></div><p>Pilih yang kamu suka. Untuk desain khusus, harga mengikuti ukuran dan tingkat kesulitan.</p></div>
         <div class="product-grid">
           <article class="product-card"><div class="product-photo"><button class="product-zoom" type="button" aria-label="Perbesar foto Brownies Medium"><img src="assets/brownies-medium.webp" alt="Brownies cokelat custom dengan buah dan dekorasi ulang tahun" loading="lazy"></button><span>01 / BROWNIES</span></div><div class="product-info"><h3>Brownies Medium</h3><p>Brownies cokelat dengan topping variatif, cocok untuk camilan atau hadiah sederhana.</p><div class="product-bottom"><strong>Rp 45.000</strong><a href="order.html?product=Brownies%20Medium">Pilih kue <span aria-hidden="true">↗</span></a></div></div></article>
           <article class="product-card"><div class="product-photo"><button class="product-zoom" type="button" aria-label="Perbesar foto Brownies Besar"><img src="assets/brownies-besar.webp" alt="Brownies besar Dapur Ambu" loading="lazy"></button><span>02 / BROWNIES</span></div><div class="product-info"><h3>Brownies Besar</h3><p>Brownies cokelat ukuran besar untuk keluarga, acara kecil, atau berbagi.</p><div class="product-bottom"><strong>Rp 90.000</strong><a href="order.html?product=Brownies%20Besar">Pilih kue <span aria-hidden="true">↗</span></a></div></div></article>
@@ -94,7 +97,7 @@
       </section>
 
       <section class="steps-section content-section" id="cara-pesan" aria-labelledby="steps-title">
-        <div class="section-heading"><div><p class="section-kicker">SEDERHANA &amp; PERSONAL</p><h2 id="steps-title">Cara <i>pesan</i></h2></div><p>Dari ide pertama sampai kue siap menemani harimu.</p></div>
+        <div class="section-heading"><div><p class="section-kicker">SEDERHANA &amp; PERSONAL</p><h2 id="steps-title"><span class="heading-line">Cara</span> <span class="heading-line"><i>pesan</i></span></h2></div><p>Dari ide pertama sampai kue siap menemani harimu.</p></div>
         <div class="step-grid" aria-label="Empat langkah memesan kue">
           <article class="step"><span class="step-number">01</span><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M13 39h38v11H13zM17 39V27h30v12M22 27c0-8 5-13 10-13s10 5 10 13M32 14V8"/><path d="M24 32h2m6 0h2m6 0h2"/></svg></div><h3>Pilih kue</h3><p>Lihat kreasi kami, lalu pilih produk atau ceritakan tema custom yang kamu inginkan.</p></article>
           <article class="step"><span class="step-number">02</span><div class="step-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><rect x="15" y="13" width="34" height="43" rx="4"/><path d="M24 13v-4h16v4M23 27h18M23 36h18M23 45h11"/><path d="m38 44 3 3 5-6"/></svg></div><h3>Isi detail</h3><p>Masukkan tanggal, jumlah, dan catatan. Referensi desain bisa dikirim saat konfirmasi.</p></article>

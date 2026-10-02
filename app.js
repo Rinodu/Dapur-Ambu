@@ -3,6 +3,7 @@
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let introTimer;
   function playIntro() {
+    if (window.gsap && window.ScrollTrigger) return;
     if (reducedMotion.matches) return;
     clearTimeout(introTimer);
     body.classList.remove('intro-running');
@@ -11,6 +12,7 @@
     introTimer = setTimeout(() => body.classList.remove('intro-running'), 3600);
   }
   if (new URLSearchParams(window.location.search).get('from') === 'order') {
+    window.dapurReturnFromOrder = true;
     window.history.replaceState(null, '', window.location.pathname + window.location.hash);
   } else if (!body.classList.contains('circle-arrival')) playIntro();
   const motionControl = document.querySelector('.motion-control');
@@ -88,6 +90,6 @@
     previewImage.alt = image.alt;
     preview.showModal();
   }));
-  preview.addEventListener('click', () => preview.close());
+  preview.addEventListener('click', () => window.dapurClosePreview ? window.dapurClosePreview() : preview.close());
 
 })();

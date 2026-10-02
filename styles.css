@@ -167,3 +167,9 @@ body:not(.order-body):not(.gallery-body) .site-header{background:var(--pink-ligh
 footer{background:linear-gradient(180deg,var(--cream),var(--pink))}
 .order-page{background:linear-gradient(180deg,var(--cream),var(--pink-light) 55%,var(--cream))}
 .order-page-intro{background:linear-gradient(160deg,var(--ink),#78384f)}
+
+.gsap-hover .product-photo img{transition:none}
+.gsap-hover .product-card:hover .product-photo img{transform:none}
+.heading-line{display:block}
+.motion-paused .step-icon svg{animation-play-state:paused}
+.step-connector{display:block;width:100%;height:2px;background:var(--ink);margin-top:20px;transform-origin:left;pointer-events:none}
