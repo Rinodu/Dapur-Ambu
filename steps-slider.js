@@ -6,10 +6,8 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const controls = document.createElement('div');
   controls.className = 'steps-controls';
-  controls.innerHTML = '<button type="button" class="step-prev" aria-label="Langkah sebelumnya">←</button><div class="step-dots"></div><span class="step-status" aria-live="polite" aria-atomic="true"></span><button type="button" class="step-next" aria-label="Langkah berikutnya">→</button>';
+  controls.innerHTML = '<div class="step-dots"></div><span class="step-status" aria-live="polite" aria-atomic="true"></span>';
   track.after(controls);
-  const prev = controls.querySelector('.step-prev');
-  const next = controls.querySelector('.step-next');
   const status = controls.querySelector('.step-status');
   const dots = cards.map((card, index) => {
     const dot = document.createElement('button');
@@ -34,14 +32,11 @@
     if (index === current) return;
     current = index;
     dots.forEach((dot, i) => dot.setAttribute('aria-current', String(i === index)));
-    prev.disabled = index === 0;
-    next.disabled = index === cards.length - 1;
+    cards.forEach((card, i) => card.classList.toggle('step-active', i === index));
     status.textContent = `${index + 1} / ${cards.length}`;
     if (window.gsap && animated()) gsap.fromTo(cards[index].querySelector('.step-icon'),
       { y: 7 }, { y: 0, duration: .45, ease: 'power2.out', overwrite: true, clearProps: 'transform' });
   }
-  prev.addEventListener('click', () => go(current - 1));
-  next.addEventListener('click', () => go(current + 1));
   track.tabIndex = 0;
   track.addEventListener('keydown', event => {
     if (!mobile.matches || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
